@@ -60,4 +60,33 @@ $(document).ready(function(){
         }
     }
 
+    //stampo uno spazio per unmiglior ordine nella console
+    console.log(' ');
+
+    //ESERCIZIO 3
+    //ramite 3 prompt, chiedere all'utente il nome, il cognome e l'età di un nuovo studente. Creare con questi dati un nuovo oggetto e inserirlo nell'array del punto precedente.
+    console.log('ESERCIZIO 3');
+
+    //chiedo all'utente i dati del nuovo studente
+    var nome = prompt('Inserisci un nome per il nuovo studente: ');
+    var cognome = prompt('Inserisci un cognome per il nuovo studente: ');
+    do {
+        var eta = parseInt(prompt('Inserisci l\'età del nuovo studente: '));
+        if(isNaN(eta) || eta < 1 || eta > 90){
+            alert('inserire età valida!')
+        }
+    } while (isNaN(eta) || eta < 1 || eta > 90);
+
+    //inizializzo l'oggetto con i dati del nuovo studente
+    var nuovo_studente = {
+        'nome' : nome,
+        'cognome' : cognome,
+        'eta' : eta
+    };
+
+    //aggiungo il nuovo_studente all'array studente
+    studenti.push(nuovo_studente);
+    console.log(studenti);
+
+
 });
